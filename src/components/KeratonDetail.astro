@@ -1,0 +1,137 @@
+---
+interface Props {
+	title: string;
+	image: string;
+	year: string;
+	founder: string;
+	description: string;
+	features: string[];
+}
+
+const { title, image, year, founder, description, features } = Astro.props;
+---
+
+<div class="keraton-detail">
+	<div class="image-container">
+		<img src={image} alt={title} />
+		<div class="image-overlay">
+			<h2>{title}</h2>
+		</div>
+	</div>
+	<div class="content">
+		<div class="info">
+			<div class="info-item">
+				<span class="label">Taun Ngadeg</span>
+				<span class="value">{year}</span>
+			</div>
+			<div class="info-item">
+				<span class="label">Pendiri</span>
+				<span class="value">{founder}</span>
+			</div>
+		</div>
+		<p class="description">{description}</p>
+		<div class="features">
+			<h3>Papan Wigati</h3>
+			<ul>
+				{features.map(feature => <li>{feature}</li>)}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<style>
+	.keraton-detail {
+		display: grid;
+		gap: 2rem;
+		background: rgba(35, 38, 45, 0.95);
+		border-radius: 1rem;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+		transition: transform 0.3s ease;
+	}
+	.keraton-detail:hover {
+		transform: translateY(-5px);
+	}
+	.image-container {
+		position: relative;
+		height: 400px;
+		overflow: hidden;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+	.keraton-detail:hover img {
+		transform: scale(1.05);
+	}
+	.image-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 2rem;
+		background: linear-gradient(transparent, rgba(0,0,0,0.8));
+	}
+	h2 {
+		color: #D4AF37;
+		font-size: 2rem;
+		margin: 0;
+	}
+	.content {
+		padding: 2rem;
+	}
+	.info {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+	.info-item {
+		display: flex;
+		flex-direction: column;
+	}
+	.label {
+		color: #D4AF37;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+	.value {
+		font-size: 1.2rem;
+		color: white;
+	}
+	.description {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+		color: #e0e0e0;
+	}
+	.features h3 {
+		color: #D4AF37;
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+	}
+	.features ul {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1rem;
+	}
+	.features li {
+		padding: 0.5rem 1rem;
+		background: rgba(212, 175, 55, 0.1);
+		border-radius: 0.5rem;
+		color: #e0e0e0;
+	}
+	@media (min-width: 768px) {
+		.keraton-detail {
+			grid-template-columns: 1fr 1fr;
+		}
+		.image-container {
+			height: 100%;
+		}
+	}
+</style>

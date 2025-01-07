@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Hero from '../components/Hero.astro';
+import KeratonDetail from '../components/KeratonDetail.astro';
+---
+
+<Layout title="Sejarah Keraton Jawa">
+	<Hero />
+	<main>
+		<div class="keraton-grid">
+			<KeratonDetail
+				title="Karaton Ngayogyakarta Hadiningrat"
+				image="https://i.ibb.co.com/w0c6ySK/DALL-E-2025-01-07-18-10-32-A-historical-depiction-of-the-Karaton-Ngayogyakarta-Hadiningrat-during-th.webp"
+				year="1755"
+				founder="Sri Sultan Hamengku Buwana I"
+				description="Karaton Ngayogyakarta Hadiningrat minangka punjering pamaréntahan lan kabudayan Kasultanan Ngayogyakarta. Kagungan kompleks bangunan kang amba lan éndah, kalebet Bangsal Kencana, Gedong Kuning, lan Bangsal Witana. Karaton iki uga nyimpen kathah pusaka kraton lan gamelan kang kramat. Ing jero karaton ana museum kang nyimpen koleksi pusaka, gamelan, lan kereta kencana. Saben dina Senen lan Kemis, ana upacara adat kang diarani Pisowanan."
+				features={[
+					"Bangsal Kencana - Papan palenggahan resmi Sultan",
+					"Gedong Kuning - Papan kanggo nyimpen pusaka",
+					"Bangsal Witana - Papan upacara adat",
+					"Museum Hamengku Buwana IX - Nyimpen koleksi pusaka lan foto-foto lawas",
+					"Bangsal Manis - Papan kanggo nampi tamu",
+					"Kedhaton - Papan tinggal Sultan lan kulawarga"
+				]}
+			/>
+			
+			<KeratonDetail
+				title="Karaton Surakarta Hadiningrat"
+				image="https://i.ibb.co.com/TgrsGd7/DALL-E-2025-01-07-18-33-07-A-historical-depiction-of-the-Karaton-Surakarta-Hadiningrat-showcasing-it.webp"
+				year="1745"
+				founder="Pakubuwana II"
+				description="Karaton Surakarta utawi Karaton Solo minangka pusat pamaréntahan Kasunanan Surakarta. Karaton iki nduweni arsitektur kang endah lan unik, kalebet Sasana Sewaka lan Panggung Sangga Buwana. Ing jero karaton uga ana museum kang nyimpen koleksi pusaka lan barang-barang kuna. Saben malem Anggara Kasih, ana ritual Kirab Pusaka. Karaton iki uga dadi pusat kabudayan Jawa kang nguri-uri tradhisi lan kesenian."
+				features={[
+					"Sasana Sewaka - Bangsal kanggo upacara resmi",
+					"Panggung Sangga Buwana - Menara kanggo semedi",
+					"Museum Karaton - Koleksi pusaka lan artefak",
+					"Alun-alun Lor lan Kidul - Papan kanggo acara adat",
+					"Sasana Handrawina - Papan kanggo jamuan",
+					"Sasana Pustaka - Perpustakaan pusaka"
+				]}
+			/>
+
+			<KeratonDetail
+				title="Pura Mangkunegaran"
+				image="https://i.ibb.co.com/TTQ7822/DALL-E-2025-01-07-18-37-10-A-detailed-and-realistic-depiction-of-Pura-Mangkunegaran-a-historic-royal.webp"
+				year="1757"
+				founder="Raden Mas Said (Mangkunegara I)"
+				description="Pura Mangkunegaran minangka kadipaten ing Surakarta kang madeg ing taun 1757. Arsitektur bangunan iki nggabungake gaya Jawa lan Eropa. Pura iki misuwur amarga koleksi pusaka, gamelan, lan tari-tarian tradisionale. Ing saben wulan purnama, ana pagelaran tari Bedhaya Anglir Mendhung. Pura iki uga nduweni perpustakaan Reksa Pustaka kang nyimpen naskah-naskah kuna."
+				features={[
+					"Pendapa Ageng - Papan pagelaran seni",
+					"Pringgitan - Papan kagem nampi tamu",
+					"Dalem Ageng - Papan pribadi Mangkunegara",
+					"Museum Reksa Pustaka - Perpustakaan naskah kuna",
+					"Paringgitan - Papan kanggo wayang kulit",
+					"Bale Peni - Papan kanggo latihan beksan"
+				]}
+			/>
+
+			<KeratonDetail
+				title="Karaton Kasepuhan Cirebon"
+				image="https://i.ibb.co.com/7rVxXSm/DALL-E-2025-01-07-18-39-35-A-detailed-and-realistic-depiction-of-Keraton-Kasepuhan-in-Cirebon-Indone.webp"
+				year="1529"
+				founder="Pangeran Cakrabuana"
+				description="Karaton Kasepuhan Cirebon minangka salah sijining karaton ing Cirebon kang madeg wiwit abad ka-15. Karaton iki nggabungake unsur budaya Jawa, Sunda, Tiongkok, lan Islam. Ing jero karaton ana museum kang nyimpen kathah koleksi pusaka lan kereta kencana. Saben Maulud, ana upacara Panjang Jimat. Karaton iki uga nduweni masjid kuna kang diarani Sang Cipta Rasa."
+				features={[
+					"Bangsal Prabayaksa - Bangsal utama",
+					"Museum Benda Kuna - Koleksi pusaka",
+					"Kereta Singa Barong - Kereta kencana",
+					"Langgar Agung - Papan ibadah",
+					"Gapura Adi - Gapura utama",
+					"Jinem Pangrawit - Papan tinggal Sultan"
+				]}
+			/>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 2rem;
+		width: 100%;
+		max-width: 1400px;
+		color: white;
+	}
+	.keraton-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 4rem;
+		padding: 2rem 0;
+	}
+	@media (min-width: 768px) {
+		.keraton-grid {
+			gap: 6rem;
+		}
+	}
+</style>
