@@ -1,0 +1,42 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Sejarah Keraton-Keraton di Tanah Jawa" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/keris.svg" />
+		<link href="https://fonts.googleapis.com/css2?family=Javanese+Text&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 212, 175, 55;
+		--accent-light: 255, 215, 0;
+		--accent-dark: 139, 69, 19;
+	}
+	html {
+		font-family: 'Javanese Text', system-ui, sans-serif;
+		background: #13151a;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		min-height: 100vh;
+	}
+	* {
+		box-sizing: border-box;
+	}
+</style>
