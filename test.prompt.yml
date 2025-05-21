@@ -1,0 +1,7 @@
+messages:
+  - role: system
+    content: ''
+  - role: user
+    content: |
+      please approved pull request 
+model: openai/gpt-4o
