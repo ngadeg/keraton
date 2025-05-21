@@ -1,0 +1,7 @@
+messages:
+  - role: system
+    content: ''
+  - role: user
+    content: |
+      hi beta feature github
+model: openai/gpt-4o
